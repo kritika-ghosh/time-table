@@ -1,4 +1,3 @@
-
 # Task Management Application
 
 A simple yet efficient **Task Manager** built using **Java Swing** for the GUI and **MySQL** for persistent data storage. This application allows users to add, update, delete, and view tasks, making task organization seamless.
@@ -25,55 +24,77 @@ A simple yet efficient **Task Manager** built using **Java Swing** for the GUI a
 
 ---
 
-
-### Prerequisites:
+## Prerequisites:
 
 - **Java JDK 8+**
 - **MySQL Server**
 - **MySQL JDBC Driver** (Connector/J)
 
-### Steps:
+---
 
-1. **Clone the Repository:**
-   ```
-   git clone https://github.com/yourusername/task-manager-java.git
-   cd task-manager-java
-   ```
+## Steps:
 
-2. **Database Setup:**
-   - Open MySQL Workbench or any MySQL client.
-   - Run the following SQL script to create the database and table:
+### 1. Clone the Repository
 
-   ```sql
-   CREATE DATABASE task_manager;
+```bash
+git clone https://github.com/yourusername/task-manager-java.git
+cd task-manager-java
+```
 
-   USE task_manager;
+### 2. Database Setup
 
-   CREATE TABLE tasks (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       title VARCHAR(100) NOT NULL,
-       description TEXT,
-       due_date DATE,
-       priority VARCHAR(20)
-   );
-   ```
+- Open MySQL Workbench or any MySQL client.
+- Run the following SQL script to create the database and table:
 
-3. **Configure Database Connection:**
-   - In your Java project, locate the database connection file (`DBConnection.java` or similar).
-   - Update the following credentials:
-     ```java
-     String url = "jdbc:mysql://localhost:3306/task_manager";
-     String user = "your_mysql_username";
-     String password = "your_mysql_password";
-     ```
+```sql
+CREATE DATABASE task_manager;
 
-4. **Add MySQL JDBC Driver:**
-   - Download and add the MySQL JDBC driver (Connector/J) `.jar` to your project’s classpath.
+USE task_manager;
 
-5. **Run the Application:**
-   - Compile and run the main class (`TaskManager.java` or similar).
-   - The GUI window should appear, allowing you to manage your tasks.
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    due_date DATE,
+    priority VARCHAR(20)
+);
+```
 
+### 3. Configure Database Connection
+
+- In your Java project, locate the database connection file (`DBConnection.java` or similar).
+- Update the following credentials:
+
+```java
+String url = "jdbc:mysql://localhost:3306/task_manager";
+String user = "your_mysql_username";
+String password = "your_mysql_password";
+```
+
+### 4. Add MySQL JDBC Driver
+
+- Download the MySQL JDBC driver (Connector/J) `.jar` file.
+- Add the `.jar` file to your project's classpath.
+
+### 5. Compile and Run the Application
+
+#### Open Terminal in VS Code (or preferred terminal)
+
+#### Compile the Java File
+
+```bash
+javac -cp ".;path/to/mysql-connector-java-x.x.x.jar" path/to/YourMainClass.java
+```
+
+#### Run the Java Application
+
+```bash
+java -cp ".;path/to/mysql-connector-java-x.x.x.jar;path/to" YourMainClass
+```
+
+> Replace `path/to/` and `YourMainClass` with the actual paths and class name in your project.
+
+- The GUI window should now appear, allowing you to manage your tasks.
 
 ---
 
@@ -86,4 +107,3 @@ A simple yet efficient **Task Manager** built using **Java Swing** for the GUI a
 - User authentication and multiple user support.
 
 ---
-
