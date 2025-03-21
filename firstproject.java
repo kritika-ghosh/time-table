@@ -19,7 +19,7 @@ public class firstproject {
     public static void main(String[] args) {
         // MySQL connection
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/k1", "root", "keya_2006");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/k1", "root", _password_);
         } catch (SQLException e) {
             e.printStackTrace();
         }
